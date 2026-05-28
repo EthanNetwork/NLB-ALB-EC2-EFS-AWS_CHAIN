@@ -31,4 +31,7 @@ I then created the Network Load Balancer with a Listener on Port 80 fwd traffic 
 
 Once the Network Load Balancer was provisioned and registered with DNS, a hello world message could be accessed through the Network Load Balancer DNS address. (IMAGE FINAL_PRODUCT_NLBDNS)
 
+
+![AWS Infrastructure Diagram](./FINAL_PRODUCT_NLBDNS.png)
+
 Ultimately, this setup demonstrates an architecture commonly used when a static IP is required for whitelisting (provided by the NLB), while still leveraging the Layer 7 routing capabilities (query sting / fixed response / redirect etc) of the ALB for the backend.
