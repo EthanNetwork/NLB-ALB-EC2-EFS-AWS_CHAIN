@@ -7,12 +7,13 @@ in front of an Application Load Balancer which fronts for two httpd EC2 instance
 ![AWS Infrastructure Diagram](./aws-network-diagram.png)
 
 I started by creating a AMI image to use as the httpd template as outlined below:  
-
-yum update -y
-yum install -y httpd
+```bash
+yum update -y && yum install -y httpd
 systemctl start httpd
 systemctl enable httpd
-echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
+echo "Hello World from $(hostname -f)" > /var/www/html/index.html
+```
+
 
 This script creates a simple landing page with a hello world message. This is intended as a stand-in for whatever reasource the theoretical org in this lab would actually be using (ex. a database requiring specific IP whitelisting which the Network Load Balancer is able to provide).
 
